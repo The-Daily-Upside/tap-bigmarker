@@ -19,6 +19,35 @@ tap is available by running:
 tap-bigmarker --about
 ```
 
+### Common settings
+
+Required:
+
+- `api_key`: BigMarker API key.
+- `api_url`: Base API URL (usually `https://web.bigmarker.com/api/v1`).
+
+Optional (stream-specific):
+
+- `download_bmid`: Needed for admin/transcript/stats download URL streams.
+- `custom_email_id`: Enables custom email analytics/suppressions streams.
+- `meeting_space_id`: Enables meeting space detail stream.
+- `integration_type`: Used by conference integration settings stream (defaults to `salesforce`).
+- `registered_conferences_email`: Used by channel registered conferences stream.
+- `channel_block_list_type`: Filter for channel block-list endpoint.
+- `registration_block_list_type`: Filter for conference registration block-list endpoint.
+- `custom_email_action_type`, `custom_email_date_start`, `custom_email_date_end`: Optional filters for custom email analytics.
+
+### Operational behavior (important)
+
+This tap is tuned for broad webinar coverage and long-running extraction.
+
+- Records are wrapped in a raw envelope (`id`, context keys, `raw`) for schema stability across many BigMarker endpoints.
+- Some per-webinar endpoints are optional. Known "resource absent" `404` responses are treated as non-fatal so one webinar does not stop the full run.
+- Unknown `404`s still fail fast to surface real endpoint/config issues.
+- Some high-friction endpoints may tolerate `429` (throttling) at the stream level to avoid blocking the entire sync.
+
+In short: expected missing optional resources are skipped; unexpected API/path problems still fail.
+
 ### Configure using environment variables
 
 This Singer tap will automatically import any environment variables within the working directory's

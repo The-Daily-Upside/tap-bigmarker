@@ -1,0 +1,84 @@
+{
+  "type": [
+    "null",
+    "object"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "conference_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "channel_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "custom_email_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "meeting_space_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "download_bmid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "bmid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "admin_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "presenter_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "member_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "raw": {
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "raw"
+  ]
+}
+

@@ -10,14 +10,22 @@ plugins:
     - state
     - catalog
     - discover
-    config:
-      start_date: '2010-01-01T00:00:00Z'
     settings:
-    - name: username
-    - name: password
+    - name: api_key
       kind: password
-    - name: start_date
-      value: '2010-01-01T00:00:00Z'
+    - name: api_url
+    - name: page_size
+      value: '10'
+    - name: download_bmid
+    - name: custom_email_id
+    - name: meeting_space_id
+    - name: integration_type
+    - name: registered_conferences_email
+    - name: channel_block_list_type
+    - name: registration_block_list_type
+    - name: custom_email_action_type
+    - name: custom_email_date_start
+    - name: custom_email_date_end
   loaders:
   - name: target-jsonl
     variant: andyh1203
