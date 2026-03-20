@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "tap-bigmarker"
-version = "0.0.1"
+version = "0.1.0"
 description = "`tap-bigmarker` is a Singer tap for BigMarker, built with the Meltano SDK for Singer Taps."
-authors = ["Manuel Apilongo"]
+authors = ["Manuel Apilongo", "The Daily Upside"]
 keywords = [
     "ELT",
     "BigMarker",
